@@ -9,7 +9,6 @@ namespace Rastreio.Servico
 {
     public class ViaCEPServico
     {
-
         public static string EnderecoURL = "http://viacep.com.br/ws/{0}/json/";
 
         public static Endereco BuscarEnderecoViaCEP(string cep)
@@ -27,7 +26,6 @@ namespace Rastreio.Servico
             return end;
 
         }
-
 
     }
 }
