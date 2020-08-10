@@ -13,7 +13,6 @@ namespace Rastreio.Servico
 
         public static Endereco BuscarEnderecoViaCEP(string cep)
         {
-
             string NovoEnderecoURL = string.Format(EnderecoURL, cep);
 
             WebClient wc = new WebClient();
@@ -24,7 +23,6 @@ namespace Rastreio.Servico
             if (end.cep == null) return null;
 
             return end;
-
         }
 
     }

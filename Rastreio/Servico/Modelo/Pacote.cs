@@ -17,6 +17,7 @@ namespace Rastreio.Servico.Modelo
         public string local { get; set; }
         public string hora { get; set; }
         public string descricao { get; set; }
+        public string versao { get; set; }
 
     }
 }

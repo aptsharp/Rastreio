@@ -12,6 +12,7 @@ using Xamarin.Forms.Xaml;
 using System.Security.Cryptography.X509Certificates;
 using System.Runtime.CompilerServices;
 using System.Collections;
+using System.Xml;
 
 namespace Rastreio
 {
@@ -32,8 +33,6 @@ namespace Rastreio
 
         private void BuscarCEP(object sender, EventArgs args)
         {
-
-
             string cep = CEP.Text.Trim();
 
 
@@ -45,15 +44,12 @@ namespace Rastreio
 
                     if (end != null)
                     {
-                        RESULTADO.Text = string.Format("Endereço: {2}, Bairro: {3},{0}-{1}", end.localidade, end.uf, end.logradouro, end.bairro);
-
+                        RESULTADO.Text = string.Format("Endereço: {2}, Bairro: {3},{0}-{1}", end.localidade, end.uf, end.logradouro, end.bairro);  
                     }
                     else
                     {
                         DisplayAlert("Erro", "Endereço não encotrado "+ cep, "ok", "cancelar");
                     }
-
-                    
                 }
                 catch (Exception e)
                 {
@@ -66,8 +62,7 @@ namespace Rastreio
             else
             {
                 // caso erro
-            }
-                     
+            }   
 
         }
 
@@ -105,7 +100,7 @@ namespace Rastreio
             string numero = PACOTE.Text.Trim();
             Pacote pac = PacoteServico.PacoteRastreio(numero);
 
-            RESULTADOP.Text = string.Format("Qdt Pac: {0}", pac.qtd);    
+            RESULTADOP.Text = string.Format("Qdt Pac: {0}, Versão: {1}", pac.qtd, pac.versao);    
         
         }
     }

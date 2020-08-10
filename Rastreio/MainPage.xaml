@@ -10,20 +10,18 @@
 
         <Image Source="logo.png" x:Name="LOGO"/>
         <Entry Placeholder="Digite o CEP" PlaceholderColor="Black" BackgroundColor="White" 
-               MaxLength="8" x:Name="CEP" Keyboard="Numeric"/>
+               MaxLength="8" x:Name="CEP" Keyboard="Numeric" FontSize="Medium" FontFamily="Lobster"/>
         <Button Text="Buscas CEP" TextColor="White" BackgroundColor="Blue" x:Name="BOTAO" />
         <Label Text="" x:Name="RESULTADO"
            HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+           VerticalOptions="CenterAndExpand"/>
 
         <Entry Placeholder="Digite o codigo" PlaceholderColor="Black" BackgroundColor="White" 
-               x:Name="PACOTE" Keyboard="Numeric"/>
+               x:Name="PACOTE" Keyboard="Default" FontSize="Medium" />        
         <Button Text="Buscar Codigo" TextColor="White" BackgroundColor="Blue" x:Name="BOTAOP"/>
         <Label Text="" x:Name="RESULTADOP"
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand"/>
-
-
 
     </StackLayout>
 
