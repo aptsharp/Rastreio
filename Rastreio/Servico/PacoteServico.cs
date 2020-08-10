@@ -19,11 +19,10 @@ namespace Rastreio.Servico
             string NovoPacoteURL = string.Format(PacoteURL, numero);
 
             WebClient wcp = new WebClient();
-            string Conteudop = wcp.DownloadString(NovoPacoteURL);
+            string Conteudop = wcp.DownloadString(NovoPacoteURL);            
 
             Pacote pac = JsonConvert.DeserializeObject<Pacote>(Conteudop);
-            //var pac = JsonConvert.DeserializeObject<List<Objeto>>(Conteudop);
-            
+
             return pac;
 
         }        

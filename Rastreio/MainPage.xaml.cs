@@ -100,7 +100,7 @@ namespace Rastreio
                 string numero = PACOTE.Text.Trim();
                 Pacote pac = PacoteServico.PacoteRastreio(numero);
 
-                RESULTADOP.Text = string.Format("Pac qtd:{0} - Versão:{1}\n objeto: {2}", pac.Qtd, pac.Versao,pac.Objeto);
+                RESULTADOP.Text = string.Format("Pac qtd:{0} - Versão:{1}\n", pac.Qtd, pac.Versao);
             }
             catch (Exception ex)
             {
