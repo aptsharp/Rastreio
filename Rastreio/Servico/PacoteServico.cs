@@ -11,7 +11,8 @@ namespace Rastreio.Servico
 {
     public class PacoteServico
     {
-        public static string PacoteURL = "https://correios.postmon.com.br/rastreamento/?objeto={0}";
+        public static string PacoteURL = "https://correios.postmon.com.br/webservice/buscaEventos/?objetos={0}";
+        
 
         public static  Pacote PacoteRastreio(string numero)
         {
