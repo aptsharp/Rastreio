@@ -1,0 +1,37 @@
+{
+    "TipoPesquisa": null,
+    "TipoResultado": null,
+    "objeto": [
+        {
+            "categoria": "SEDEX",
+            "erro": null,
+            "evento": [
+                {
+                    "amazoncode": null,
+                    "amazontimezone": null,
+                    "cidade": "SAO PAULO",
+                    "codigo": "05311985",
+                    "comentario": null,
+                    "data": "07/08/2020",
+                    "descricao": "Objeto postado",
+                    "destino": [],
+                    "detalhe": null,
+                    "documento": null,
+                    "endereco": null,
+                    "hora": "09:29",
+                    "local": "CTE JAGUARE/GCCAP",
+                    "recebedor": null,
+                    "status": "01",
+                    "sto": null,
+                    "tipo": "PO",
+                    "uf": "SP"
+                }
+            ],
+            "nome": "ETIQUETA LOGICA SEDEX OJ",
+            "numero": "OJ984651453BR",
+            "sigla": "OJ"
+        }
+    ],
+    "qtd": "1",
+    "versao": "2.0"
+}

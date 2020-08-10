@@ -10,7 +10,7 @@
 
         <Image Source="logo.png" x:Name="LOGO"/>
         <Entry Placeholder="Digite o CEP" PlaceholderColor="Black" BackgroundColor="White" 
-               MaxLength="8" x:Name="CEP" Keyboard="Numeric" FontSize="Medium" FontFamily="Lobster"/>
+               MaxLength="9" x:Name="CEP" Keyboard="Numeric" FontSize="Medium" FontFamily="Lobster"/>
         <Button Text="Buscas CEP" TextColor="White" BackgroundColor="Blue" x:Name="BOTAO" />
         <Label Text="" x:Name="RESULTADO"
            HorizontalOptions="Center"

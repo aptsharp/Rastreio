@@ -18,17 +18,18 @@ namespace Rastreio.Servico
             string NovoPacoteURL = string.Format(PacoteURL, numero);
 
             WebClient wcp = new WebClient();
-            string Conteudop = wcp.DownloadString(NovoPacoteURL);
+            string Conteudop = wcp.DownloadString(NovoPacoteURL); //os erros retornam aqui
 
-            Pacote pac = JsonConvert.DeserializeObject<Pacote>(Conteudop);
+            Pacote pac = JsonConvert.DeserializeObject<Pacote>(Conteudop); 
 
             return pac;
         }
         
     }
 }
-
 /*
  * fonte usada para facilitar o complexidade SOAP dos correios
  * https://github.com/PostmonAPI/correios.postmon.com.br
  */
+
+

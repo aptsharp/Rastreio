@@ -33,37 +33,34 @@ namespace Rastreio
 
         private void BuscarCEP(object sender, EventArgs args)
         {
-            string cep = CEP.Text.Trim();
-
-
-            if(isValidCEP(cep))
+            try
             {
-                try
+
+                string cep = CEP.Text.Trim();
+                if (isValidCEP(cep))
                 {
+                    ((Button)sender).IsEnabled = false;
+
                     Endereco end = ViaCEPServico.BuscarEnderecoViaCEP(cep);
 
                     if (end != null)
                     {
-                        RESULTADO.Text = string.Format("Endereço: {2}, Bairro: {3},{0}-{1}", end.localidade, end.uf, end.logradouro, end.bairro);  
+                        RESULTADO.Text = string.Format("Endereço: {2}, Bairro: {3},{0}-{1}", end.localidade, end.uf, end.logradouro, end.bairro);
                     }
                     else
                     {
-                        DisplayAlert("Erro", "Endereço não encotrado "+ cep, "ok", "cancelar");
+                        DisplayAlert("Erro", "Endereço não encotrado " + cep, "ok", "cancelar");
                     }
                 }
-                catch (Exception e)
-                {
+            }
+            catch (Exception e)
+            {
 
-                    DisplayAlert("Erro Critico", e.Message, "ok");
-
-                }
+                DisplayAlert("Erro Critico", e.Message, "ok");
 
             }
-            else
-            {
-                // caso erro
-            }   
 
+            ((Button)sender).IsEnabled = true;
         }
 
         private bool isValidCEP(string cep)
@@ -73,7 +70,7 @@ namespace Rastreio
             int n;
             bool isNumeric = int.TryParse(cep, out n);
             // preciso para fazer a comparação entre string cep e se ela sé tera numeros para exibir mensagem de erro expecifica.
-                        
+
 
             if (cep.Length != 8 && isNumeric == true)
             {
@@ -93,15 +90,24 @@ namespace Rastreio
 
             return valido;
         }
-   
+
         private void AchaPacote(object sender, EventArgs args)
         {
 
-            string numero = PACOTE.Text.Trim();
-            Pacote pac = PacoteServico.PacoteRastreio(numero);
+            ((Button)sender).IsEnabled = false;
+            try
+            {
+                string numero = PACOTE.Text.Trim();
+                Pacote pac = PacoteServico.PacoteRastreio(numero);
 
-            RESULTADOP.Text = string.Format("Qdt Pac: {0}, Versão: {1}", pac.qtd, pac.versao);    
-        
+                RESULTADOP.Text = string.Format("Qdt Pac: {0}, Versão: {1}", pac.qtd, pac.versao);
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Erro", ex.Message, "OK");
+            }
+
+            ((Button)sender).IsEnabled = true;
         }
     }
 }
