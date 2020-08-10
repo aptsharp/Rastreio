@@ -98,9 +98,9 @@ namespace Rastreio
             try
             {
                 string numero = PACOTE.Text.Trim();
-                Pacote pac = PacoteServico.PacoteRastreio(numero);
+                Evento pac = PacoteServico.PacoteRastreio(numero);
 
-                RESULTADOP.Text = string.Format("Qdt Pac: {0}, Versão: {1}", pac.qtd, pac.versao);
+                RESULTADOP.Text = string.Format("Pac Data:{0}",pac.Data);
             }
             catch (Exception ex)
             {
