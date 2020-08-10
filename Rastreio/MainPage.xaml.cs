@@ -93,14 +93,14 @@ namespace Rastreio
 
         private void AchaPacote(object sender, EventArgs args)
         {
-
-            ((Button)sender).IsEnabled = false;
             try
             {
-                string numero = PACOTE.Text.Trim();
-                Evento pac = PacoteServico.PacoteRastreio(numero);
+                ((Button)sender).IsEnabled = false;
 
-                RESULTADOP.Text = string.Format("Pac Data:{0}",pac.Data);
+                string numero = PACOTE.Text.Trim();
+                Pacote pac = PacoteServico.PacoteRastreio(numero);
+
+                RESULTADOP.Text = string.Format("Pac qtd:{0}", pac.Qtd);
             }
             catch (Exception ex)
             {

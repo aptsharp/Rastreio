@@ -8,9 +8,9 @@ namespace Rastreio.Servico.Modelo
     {
         public string Categoria { get; set; }
         public object Erro { get; set; }
-        public List<Evento> Evento { get; set; }
         public string Nome { get; set; }
         public string Numero { get; set; }
         public string Sigla { get; set; }
+        public List<Evento> Evento { get; set; }
     }
 }
