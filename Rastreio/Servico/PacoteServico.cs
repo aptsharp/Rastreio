@@ -19,13 +19,14 @@ namespace Rastreio.Servico
             string NovoPacoteURL = string.Format(PacoteURL, numero);
 
             WebClient wcp = new WebClient();
-            string Conteudop = wcp.DownloadString(NovoPacoteURL); //os erros retornam aqui
+            string Conteudop = wcp.DownloadString(NovoPacoteURL);
 
-            Pacote pac = JsonConvert.DeserializeObject<Pacote>(Conteudop); 
-
+            Pacote pac = JsonConvert.DeserializeObject<Pacote>(Conteudop);
+            //var pac = JsonConvert.DeserializeObject<List<Objeto>>(Conteudop);
+            
             return pac;
-        }
-        
+
+        }        
     }
 }
 /*
