@@ -19,24 +19,35 @@ namespace Rastreio.Servico
 
         public static  Pacote PacoteRastreio(string numero)
         {
-            string NovoPacoteURL = string.Format(PacoteURL, numero);
+            try
+            {
 
-            WebClient wcp = new WebClient();
+                string NovoPacoteURL = string.Format(PacoteURL, numero);
 
-            string Conteudop = wcp.DownloadString(NovoPacoteURL);
+                WebClient wcp = new WebClient();
 
-            Pacote pac = JsonConvert.DeserializeObject<Pacote>(Conteudop);
+                string Conteudop = wcp.DownloadString(NovoPacoteURL);
+
+                Pacote pac = JsonConvert.DeserializeObject<Pacote>(Conteudop);
 
 
 
-            //foreach(object Objeto in Pacote < List<Objeto>)
-            //{
+                //foreach(object Objeto in Pacote < List<Objeto>)
+                //{
 
-            //}
+                //}
 
-            //Public List<Objetos> Objeto { Get => Objeto; set => Objeto = Value;  }
+                //Public List<Objetos> Objeto { Get => Objeto; set => Objeto = Value;  }
 
-            return pac;
+                return pac;
+
+            }
+            catch
+            {
+                throw new Exception();
+
+            }
+            
 
         }  
         
