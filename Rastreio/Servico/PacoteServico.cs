@@ -6,6 +6,9 @@ using System.Net;
 using System.Xml;
 using System.Xml.Linq;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Dynamic;
 
 namespace Rastreio.Servico
 {
@@ -19,13 +22,24 @@ namespace Rastreio.Servico
             string NovoPacoteURL = string.Format(PacoteURL, numero);
 
             WebClient wcp = new WebClient();
-            string Conteudop = wcp.DownloadString(NovoPacoteURL);            
+
+            string Conteudop = wcp.DownloadString(NovoPacoteURL);
 
             Pacote pac = JsonConvert.DeserializeObject<Pacote>(Conteudop);
 
+
+
+            //foreach(object Objeto in Pacote < List<Objeto>)
+            //{
+
+            //}
+
+            //Public List<Objetos> Objeto { Get => Objeto; set => Objeto = Value;  }
+
             return pac;
 
-        }        
+        }  
+        
     }
 }
 /*
